@@ -40,7 +40,7 @@ n = m + 1;
 while (n < size)
 {
 low = (array[n] < *low) ? (array + n) : low;
-j++;
+n++;
 }
 
 if ((array + m) != low)
