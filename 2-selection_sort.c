@@ -9,7 +9,7 @@ void integer_swap(int *y, int *z)
 {
 int wap;
 
-tmp = *y;
+wap = *y;
 *y = *z;
 *z = wap;
 }
