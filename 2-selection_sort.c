@@ -26,29 +26,22 @@ wap = *y;
 
 void selection_sort(int *array, size_t size)
 {
-int *low;
-size_t m = 0, n;
+	int *low;
+	size_t m, n;
 
-if (array == NULL || size < 2)
-return;
+	if (array == NULL || size < 2)
+		return;
 
-while (m < size - 1)
-{
-low = array + m;
-n = m + 1;
+	for (m = 0; m < size - 1; m++)
+	{
+		low = array + m;
+		for (n = m + 1; n < size; n++)
+			low = (array[n] < *low) ? (array + n) : low;
 
-while (n < size)
-{
-low = (array[n] < *low) ? (array + n) : low;
-n++;
-}
-
-if ((array + m) != low)
-{
-integer_swap(array + m, low);
-print_array(array, size);
-}
-
-m++;
-}
+		if ((array + m) != low)
+		{
+			integer_swap(array + m, low);
+			print_array(array, size);
+		}
+	}
 }
