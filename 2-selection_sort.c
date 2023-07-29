@@ -7,11 +7,11 @@
 */
 void integer_swap(int *y, int *z)
 {
-int tmp;
+int wap;
 
-tmp = *y;
+wap = *y;
 *y = *z;
-*z = tmp;
+*z = wap;
 }
 
 /**
@@ -26,22 +26,29 @@ tmp = *y;
 
 void selection_sort(int *array, size_t size)
 {
-	int *low;
-	size_t m, n;
+int *low;
+size_t m = 0, n;
 
-	if (array == NULL || size < 2)
-		return;
+if (array == NULL || size < 2)
+return;
 
-	for (m = 0; m < size - 1; m++)
-	{
-		low = array + m;
-		for (n = m + 1; n < size; n++)
-			low = (array[n] < *low) ? (array + n) : low;
+while (m < size - 1)
+{
+low = array + m;
+n = m + 1;
 
-		if ((array + m) != low)
-		{
-			integer_swap(array + m, low);
-			print_array(array, size);
-		}
-	}
+while (n < size)
+{
+low = (array[n] < *low) ? (array + n) : low;
+j++;
+}
+
+if ((array + m) != low)
+{
+integer_swap(array + m, low);
+print_array(array, size);
+}
+
+m++;
+}
 }
