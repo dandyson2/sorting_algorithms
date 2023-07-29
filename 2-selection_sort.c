@@ -7,11 +7,11 @@
 */
 void integer_swap(int *y, int *z)
 {
-int wap;
+int tmp;
 
-wap = *y;
+tmp = *y;
 *y = *z;
-*z = wap;
+*z = tmp;
 }
 
 /**
